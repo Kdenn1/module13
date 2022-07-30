@@ -36,6 +36,7 @@ Product.init(
     category_id: {
       type: DataTypes.INTEGER,
       // still need to reference the category model's id somehow 
+      
     }
   },
   {
