@@ -4,12 +4,15 @@ const routes = require('./routes');
 const { Sequelize } = require('./config/connection');
 const sequelize = new Sequelize('')
 //to test the connection 
+async function testConnection() {
 try {
   await sequelize.authenticate();
   console.log('Connection successful!');
 } catch (error) {
   console.error('Unable to reach database');
 }
+}
+testConnection();
 
 const app = express();
 const PORT = process.env.PORT || 3001;

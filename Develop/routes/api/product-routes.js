@@ -5,6 +5,9 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 //these ones will follow the same concept from the category routes js
 
 // get all products
+//async error forced me to wrap all of this in an async function 
+
+
 router.get('/', async (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
