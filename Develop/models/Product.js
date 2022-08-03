@@ -17,26 +17,29 @@ Product.init(
       autoIncrement: true
     },
     product_name: {
-      string: true,
+      type: DataTypes.STRING,
       allowNull: false
     },
     price: {
       // need to add decimal as a value, this may or may not be correct 
-      Number: VARCHAR(20),
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
-      decimal: true
+      isDecimal: true
     },
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      // not sure if default value declaration or isnumeric declarations are valid 
-      DEFAULT: 10,
-      ISNUMERIC: true
+      defaultValue: 10,
+      isNumeric: true
     },
     category_id: {
       type: DataTypes.INTEGER,
       // still need to reference the category model's id somehow 
-      
+      references: {
+        model: 'category',
+        key: 'id',
+        unique: false
+      }
     }
   },
   {
